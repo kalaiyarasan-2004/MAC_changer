@@ -4,10 +4,11 @@ import subprocess
 
 print("welcome to MAC changer")
 
+interface=input("Enter the interface you want to change: ")
 mac = input("Enter mac: ")
 
-subprocess.call("ifconfig eth0 down",shell=True)
-subprocess.call("ifconfig eth0 hw ether "+mac,shell = True)
-subprocess.call("ifconfig eth0 up",shell=True)
+subprocess.call("ifconfig "+interface+" down",shell=True)
+subprocess.call("ifconfig "+interface+" hw ether "+mac,shell = True)
+subprocess.call("ifconfig "+interface+" up",shell=True)
 
-print("The mac changed to "+mac)
+print("The "+interface+" mac address changed to "+mac)
